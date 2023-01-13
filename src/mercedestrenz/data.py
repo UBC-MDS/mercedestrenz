@@ -1,3 +1,5 @@
+# Author: Spencer Gerlach
+# Date: 2023-01-12
 from importlib import resources
 import pandas as pd
 
