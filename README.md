@@ -2,6 +2,9 @@
 
 This python package is for inspect and analyze used Mercedes Benz car prices. The package helps users to get simple answers of how to choose the used Mercedes Benz car in the market. The package also include useful visualization tool and trained model to serve buyers and sellers.
 
+## Collaborators
+
+Kelly Wu, Morris Zhao, Spencer Gerlach, Ty Andrews
 ## Python ecosystem
 
 - TODO
@@ -30,7 +33,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`mercedestrenz` was created by Ty Andrews. It is licensed under the terms of the MIT license.
+`mercedestrenz` was created by Kelly Wu, Morris Zhao, Spencer Gerlach, Ty Andrews. It is licensed under the terms of the MIT license.
 
 ## Credits
 
