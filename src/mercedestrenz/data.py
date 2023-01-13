@@ -1,7 +1,7 @@
 from importlib import resources
 import pandas as pd
 
-def get_listings():
+def load_sample_mercedes_listings()-> pd.DataFrame():
     """
     Retrieves a dataframe containing sample data of used Mercedez Benz vehicles. 
     The function returns a pandas dataframe of all sample listings.
