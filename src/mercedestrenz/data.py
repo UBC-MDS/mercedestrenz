@@ -22,7 +22,7 @@ def load_sample_mercedes_listings()-> pd.DataFrame():
 
 # Author: Kelly Wu
 # Date: 2023-01-12
-def listing_search(max_price=30000, region = "any", model = "any", sort_feature = "odometer", ascending = True):
+def listing_search(max_price=30000, region = "any", model = "any", sort_feature = "odometer", ascending = True)-> pd.DataFrame():
     """
     Return the top listings that are within the budget specified by the user, sorted by price from lowest to highest.
     The results are filtered by optional input, region and model.
@@ -44,7 +44,7 @@ def listing_search(max_price=30000, region = "any", model = "any", sort_feature 
     ascending : bool
         Boolean value that indicate whether the sort is ascending. The default value is True.
 
-        Returns
+    Returns
     -------
     pandas.DataFrame
         A pandas dataframe of the sorted listings that matches user's expected price range.
