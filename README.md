@@ -2,7 +2,12 @@
 
 This python package is for inspect and analyze used Mercedes Benz car prices. The package helps users to get simple answers of how to choose the used Mercedes Benz car in the market. The package also include useful visualization tool and trained model to serve buyers and sellers.
 
+## Python ecosystem
+
+- TODO
+
 ## Functions
+
 The package contains the following functions:
 1. `load_sample_mercedes_listings`: Retrieves a data frame that containing sample data of used Mercedez Benz vehicles.
 2. `plot_benz`: Plot a density plot of a Mercedes-Benz model to see where the current vehicle's price falls for that same model in the market.
