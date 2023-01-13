@@ -17,4 +17,9 @@ def plot_benz(model, price, market_df):
     -------
     altair.Chart
         Density plot of prices for the specified Mercedes-Benz model.
+    
+    Examples
+    --------
+    >>> from mercedestrenz.visualizations import plot_benz
+    >>> plot_benz(model='S-Class', price=80000, market_df=market_df))
     """
