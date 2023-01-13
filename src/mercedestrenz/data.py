@@ -43,4 +43,17 @@ def listing_search(max_price=30000, region = "any", model = "any", sort_feature 
         The numeric variable that the user is interested in using to sort the result. The default value is to sort by odometer value.
     ascending : bool
         Boolean value that indicate whether the sort is ascending. The default value is True.
+
+        Returns
+    -------
+    pandas.DataFrame
+        A pandas dataframe of the sorted listings that matches user's expected price range.
+    
+    Examples
+    --------
+    >>> from mercedestrenz.mercedestrenz import listing_search
+    >>> listing_search(max_price=30000, region = "any", model = "S-class", sort_feature = "odometer", ascending = True)
     """
+    pass
+
+   
