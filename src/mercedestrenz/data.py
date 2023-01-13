@@ -15,6 +15,6 @@ def load_sample_mercedes_listings()-> pd.DataFrame():
     
     Examples
     --------
-    >>> from mercedeztrenz.datasets import get_listings
+    >>> from mercedestrenz.datasets import get_listings
     >>> output_pandas_df = get_listings()
     """
