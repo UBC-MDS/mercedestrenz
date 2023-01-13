@@ -24,3 +24,4 @@ def plot_benz(model, price, market_df):
     >>> plot_benz(model='S-Class', price=80000, market_df=market_df))
     >>> plot_benz(model='C-Class', price=10000, market_df=used_car_df))
     """
+    pass
