@@ -7,9 +7,9 @@ def plot_benz(model, price, market_df):
     Parameters
     ----------
     model : str
-        The model of the vehicle intersted.
+        The model of the vehicle.
     price : float
-        The price of the vehicle intersted.
+        The price of the vehicle.
     market_df : pandas.DataFrame
         Dataframe containing information on used Mercedes-Benz in the market.
     
