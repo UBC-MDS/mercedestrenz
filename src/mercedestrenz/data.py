@@ -13,6 +13,6 @@ def get_listings():
     
     Examples
     --------
-    >>> from mercedeztrenz/datasets import get_listings
+    >>> from mercedeztrenz.datasets import get_listings
     >>> output_pandas_df = get_listings()
     """
