@@ -20,7 +20,7 @@ The package contains the following functions:
 
 ## Package dataset
 
-The package contains a static dataset of used-car listings that were previously web scraped from Craigslist. Several key attributes about the used-car are available in the dataset, such as url of the listing, vehicle prices, models, car conditions, odometer readings, VINs, regions, etc. The package's dataset was adapted from verison 10 of the raw dataset created by [AustinReese](https://github.com/AustinReese/UsedVehicleSearch).
+The package contains a static dataset for Craiglist used-car listings that were previously web scraped. Several key attributes about the used-car are available in the dataset, such as vehicle prices, models, car conditions, odometer readings, VINs, regions and transmission. The package's dataset was adapted from verison 10 of the raw dataset created by [AustinReese](https://github.com/AustinReese/UsedVehicleSearch).
 
 ## Installation
 
