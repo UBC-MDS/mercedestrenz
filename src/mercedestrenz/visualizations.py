@@ -12,4 +12,9 @@ def plot_benz(model, price, market_df):
         The price of the vehicle intersted.
     market_df : pandas.DataFrame
         Dataframe containing information on used Mercedes-Benz in the market.
+    
+    Returns
+    -------
+    altair.Chart
+        Density plot of prices for the specified Mercedes-Benz model.
     """
