@@ -1,13 +1,14 @@
 # mercedestrenz
 
-This python package is for inspect and analyze used Mercedes Benz car prices. The package helps users to get simple answers of how to choose the used Mercedes Benz car in the market. The package also include useful visualization tool and trained model to serve buyers and sellers.
+This python package is for inspecting and analyzing used Mercedes Benz car prices. The package helps users to get simple answers on how to choose the used Mercedes Benz car in the market. The package also includes useful visualization tool and trained model to serve buyers and sellers.
 
 ## Collaborators
 
 Kelly Wu, Morris Zhao, Spencer Gerlach, Ty Andrews
+
 ## Python ecosystem
 
-- TODO
+Our package is unique, it provides an easy way to investigate used Mercedes Benz car prices. It provide people a big picture about the market. The package is rely on the real market data set to plot, filter and predict. It also gives advice to buyers and seller wehn they try to make a decision.
 
 ## Functions
 
