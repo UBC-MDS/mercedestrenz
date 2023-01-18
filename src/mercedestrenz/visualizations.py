@@ -1,7 +1,11 @@
 # Author: Morris Zhao
 # Date: 2023-01-12
 
-def plot__mercedes_price(model, price, market_df):
+from data import listing_search
+import pandas as pd
+import altair as alt
+
+def plot_mercedes_price(model, price, market_df):
     """
     Plot a density plot of a specific Mercedes-Benz model to see where 
     the current vehicle's price falls within the distribution of prices 
@@ -23,8 +27,8 @@ def plot__mercedes_price(model, price, market_df):
     
     Examples
     --------
-    >>> from mercedestrenz.visualizations import plot_benz
-    >>> plot_benz(model='S-Class', price=80000, market_df=market_df))
-    >>> plot_benz(model='C-Class', price=10000, market_df=used_car_df))
+    >>> from mercedestrenz.visualizations import plot_mercedes_price
+    >>> plot_mercedes_price(model='S-Class', price=80000, market_df=market_df))
+    >>> plot_mercedes_price(model='C-Class', price=10000, market_df=used_car_df))
     """
     pass
