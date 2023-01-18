@@ -31,4 +31,10 @@ def plot_mercedes_price(model, price, market_df):
     >>> plot_mercedes_price(model='S-Class', price=80000, market_df=market_df))
     >>> plot_mercedes_price(model='C-Class', price=10000, market_df=used_car_df))
     """
-    pass
+    # Test if inputs have correct type
+    if type(model) != str:
+        raise Exception('The first input should be a string contain the specific model')
+    if type(price) != float and type(price) != int:
+        raise Exception('The second input should be a number (the price of the car)')
+    if not isinstance(market_df, pd.DataFrame):
+        raise Exception('The third input should be a pd.DataFrame')
