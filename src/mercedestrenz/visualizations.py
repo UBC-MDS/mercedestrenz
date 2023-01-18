@@ -5,7 +5,7 @@ from data import listing_search
 import pandas as pd
 import altair as alt
 
-def plot_mercedes_price(model, price, market_df):
+def plot_mercedes_price(model, price, market_df, price_col = 'price_USD'):
     """
     Plot a density plot of a specific Mercedes-Benz model to see where 
     the current vehicle's price falls within the distribution of prices 
@@ -19,6 +19,8 @@ def plot_mercedes_price(model, price, market_df):
         The price of the vehicle.
     market_df : pandas.DataFrame
         Dataframe containing information on used Mercedes-Benz in the market.
+    price_col : str
+        The name of the column of price. (By default 'price_USD')
     
     Returns
     -------
@@ -46,7 +48,7 @@ def plot_mercedes_price(model, price, market_df):
     market_df['x'] = price
     
     # Target column is price
-    target_col = 'price'
+    target_col = price_col
     
     # Caculating the median of the market
     median = np.percentile(market_df['price'], 50)
