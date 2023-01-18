@@ -1,7 +1,7 @@
 # Author: Morris Zhao
-# Date: 2023-01-12
+# Date: 2023-01-17
 
-# from data import listing_search
+from data import listing_search
 import pandas as pd
 import altair as alt
 
@@ -40,7 +40,7 @@ def plot_mercedes_price(model, price, market_df):
         raise Exception('The third input should be a pd.DataFrame')
     
     # filter the data set for the specific model
-    # model_df = listing_search(market_df, model = model)
+    market_df = listing_search(market_df, model = model)
 
     # Add current price to the data set
     market_df['x'] = price
