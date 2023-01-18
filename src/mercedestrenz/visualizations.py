@@ -38,3 +38,8 @@ def plot_mercedes_price(model, price, market_df):
         raise Exception('The second input should be a number (the price of the car)')
     if not isinstance(market_df, pd.DataFrame):
         raise Exception('The third input should be a pd.DataFrame')
+    
+    # filter the data set for the specific model
+    # model_df = listing_search(market_df, model = model)
+    
+    
