@@ -42,4 +42,12 @@ def plot_mercedes_price(model, price, market_df):
     # filter the data set for the specific model
     # model_df = listing_search(market_df, model = model)
     
+        # Add current price to the data set
+    market_df['x'] = price
+    
+    # Target column is price
+    target_col = 'price'
+    
+    # Caculating the median of the market
+    median = np.percentile(market_df['price'], 50)
     
