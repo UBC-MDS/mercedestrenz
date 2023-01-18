@@ -1,7 +1,7 @@
 # Author: Morris Zhao
 # Date: 2023-01-12
 
-from data import listing_search
+# from data import listing_search
 import pandas as pd
 import altair as alt
 
@@ -41,7 +41,7 @@ def plot_mercedes_price(model, price, market_df):
     
     # filter the data set for the specific model
     # model_df = listing_search(market_df, model = model)
-    
+
     # Add current price to the data set
     market_df['x'] = price
     
@@ -51,7 +51,7 @@ def plot_mercedes_price(model, price, market_df):
     # Caculating the median of the market
     median = np.percentile(market_df['price'], 50)
     
-        # different message will be send base on price
+    # different message will be send base on price
     if price > median:
         message = f"The input {target_col} = {price} is larger than the median of the market"
     else:
