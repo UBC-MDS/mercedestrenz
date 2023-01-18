@@ -1,11 +1,11 @@
 # Author: Morris Zhao
 # Date: 2023-01-17
 
-from data import listing_search
+# from data import listing_search
 import pandas as pd
 import altair as alt
 
-def plot_mercedes_price(model, price, market_df, price_col = 'price_USD'):
+def plot_mercedes_price(model, price, market_df, model_col = 'model', price_col = 'price_USD'):
     """
     Plot a density plot of a specific Mercedes-Benz model to see where 
     the current vehicle's price falls within the distribution of prices 
@@ -41,14 +41,23 @@ def plot_mercedes_price(model, price, market_df, price_col = 'price_USD'):
     if not isinstance(market_df, pd.DataFrame):
         raise Exception('The third input should be a pd.DataFrame')
     
-    # filter the data set for the specific model
-    market_df = listing_search(market_df, model = model)
-
-    # Add current price to the data set
-    market_df['x'] = price
+    # test if price column in the data set
+    if price_col not in market_df.columns:
+        raise Exception("Please insert the name of the price column (e.g. plot_mercedes_price('glc',10,df,price_col='price_CAD')")
+    
+    # test if model input is a categoric in the dataset's model
+    if model_col not in market_df.columns:
+        raise Exception("Please insert the name of the model column")
     
     # Target column is price
     target_col = price_col
+    
+    # filter the data set for the specific model
+    # market_df = listing_search(market_df, model = model)
+    market_df = market_df[market_df[model_col] == model]
+
+    # Add current price to the data set
+    market_df['x'] = price
     
     # Caculating the median of the market
     median = np.percentile(market_df['price'], 50)
@@ -86,4 +95,3 @@ def plot_mercedes_price(model, price, market_df, price_col = 'price_USD'):
     final_plot = density_plot + line
     
     return final_plot
-    
