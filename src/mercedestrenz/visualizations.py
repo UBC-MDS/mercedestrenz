@@ -20,6 +20,8 @@ def plot_mercedes_price(model, price, market_df, model_col = 'model', price_col 
         The price of the vehicle.
     market_df : pandas.DataFrame
         Dataframe containing information on used Mercedes-Benz in the market.
+    model_col : str
+        The name of the column of model. (By default 'model')
     price_col : str
         The name of the column of price. (By default 'price_USD')
     
