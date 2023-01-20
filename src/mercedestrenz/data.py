@@ -19,10 +19,11 @@ def load_sample_mercedes_listings()-> pd.DataFrame():
     >>> from mercedestrenz.datasets import get_listings
     >>> sample_mercedes_listings = get_listings()
     """
+    pass
 
 
 # Author: Kelly Wu
-# Date: 2023-01-12
+# Date: 2023-01-19
 def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odometer", ascending = True)-> pd.DataFrame():
     """
     Return the top listings that are within the budget specified by the user.
@@ -64,23 +65,20 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
         raise Exception("The input dataset is not of Pandas DataFrame format")
 
     # check budget is either a flort/int or a list of float/int
-    if len(budget) == 1:
-        # check if float or int
-        if type(budget) not in [float, int]:
-            raise Exception("The maximum budget should be a float or a integer")
-    elif len(budget) == 2:
-        for elem in budget:
-            if type(elem) not in [float, int]:
-                raise Exception("The budget range boundaries should be floats or integers")
-    else:
-        raise Exception("Please specify your maximum budget using a number, or a range of budge using a list of numeric values.")
+    if type(budget) not in [float, int]: 
+        if len(budget) == 2:
+            for elem in budget:
+                if type(elem) not in [float, int]:
+                    raise Exception("The budget range boundaries should be floats or integers")
+        else:
+            raise Exception("Please specify your maximum budget using a number, or a range of budge using a list of numeric values.")
 
     # model= parameter input should be a string
     if type(model) != str:
             raise Exception("The model parameter should have a string as the input")
     
     # The string should correspond to a specific car model in the model column
-    if (data['model'].eq(model)).any() == False:
+    if ((data['model'].eq(model)).any() or model == 'any') == False:
         raise Exception("The specified car model does not exist in the dataframe provided")
 
     # sort_feature should be a string
@@ -89,7 +87,7 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     
     # sort_feature should indicate a numeric column in the provided data frame
     numeric_cols = data.select_dtypes('number').columns.to_list()
-    if type(sort_feature) not in numeric_cols:
+    if sort_feature not in numeric_cols:
         raise Exception("The specified sort_feature should be a numeric column in the provided dataframe.")
 
     # ascending is either true or false
@@ -99,10 +97,10 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     # ======= Function ==========
     
     # filter by budget
-    if len(budget) == 1: # max budget specified
+    if type(budget) in [float, int]: # max budget specified
         condition = data['price'] <= budget
     else:
-        condition = budget[0] <= data['price'] <= budget[1]
+        condition = ((budget[0] <= data['price']) & (data['price'] <= budget[1]))
     temp_df = data[condition]
 
     # filter by model
