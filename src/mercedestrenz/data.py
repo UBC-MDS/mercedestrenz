@@ -101,15 +101,15 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
         condition = data['price'] <= budget
     else:
         condition = ((budget[0] <= data['price']) & (data['price'] <= budget[1]))
-    temp_df = data[condition]
+    temp_df = data.loc[condition]
 
     # filter by model
     if model != "any":
         condition = data['model'] == model
-        temp_df = temp_df[condition]
+        temp_df = temp_df.loc[condition]
 
     # sort by price & output
-    result = temp_df.sort_values(by = 'price', ascending = ascending)
+    result = temp_df.sort_values(by = [sort_feature, 'price'], ascending = [ascending, True])
 
     # order output 
     priority_order = ['url', 'price', 'model', sort_feature]
