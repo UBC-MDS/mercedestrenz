@@ -31,7 +31,7 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     The results are filtered by an optional input, model.
     The results are also sorted by ascending price and another the specified feature in the sort_feature parameter. 
     By default the sort_feature is lower mileage value, but user has the flexibility to choose another numeric attribute.
-    Return an empty pandas dataframe when there is no listing that satisfies the criteria and print a warning message.
+    Return an empty pandas dataframe when there is no listing that satisfies the criteria.
     
     Parameters
     ----------
