@@ -56,6 +56,20 @@ def test_listing_search():
     else:
         assert False, "Expected exception was not raised"
 
+    try:
+        listing_search(df, budget=[0, '80000'], model = 450, sort_feature = "year", ascending = False)
+    except Exception as e:
+        assert str(e) == "The budget range boundaries should be floats or integers", f"Unexpected exception raised: {e}"
+    else:
+        assert False, "Expected exception was not raised"
+        
+    try:
+        listing_search(df, budget=['0', 80000], model = 450, sort_feature = "year", ascending = False)
+    except Exception as e:
+        assert str(e) == "The budget range boundaries should be floats or integers", f"Unexpected exception raised: {e}"
+    else:
+        assert False, "Expected exception was not raised"
+
     # wrong input for sort_feature parameter
     try:
         listing_search(df, budget=[0, 80000], model = 'gls', sort_feature = ['price', 'year'], ascending = False)
@@ -77,3 +91,15 @@ def test_listing_search():
         assert str(e) == "Please specify True or False in the ascending parameter", f"Unexpected exception raised: {e}"
     else:
         assert False, "Expected exception was not raised"  
+
+    # invalid input dataset type
+    try:
+        listing_search(data, budget=[0, 100, 10000], model = "any", sort_feature = "year", ascending = False)
+    except Exception as e:
+        # Check if the correct exception was raised
+        assert str(e) == "The input dataset is not of Pandas DataFrame format", f"Unexpected exception raised: {e}"
+    else:
+        # If no exception was raised, fail the test
+        assert False, "Expected exception was not raised"
+
+
