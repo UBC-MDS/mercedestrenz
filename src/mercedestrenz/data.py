@@ -53,10 +53,10 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     
     Examples
     --------
-    >>> from mercedestrenz.mercedestrenz import listing_search
-    >>> result = listing_search(data, budget=[2000, 20000], model = "any", sort_feature = "odometer", ascending = True)
-    >>> result.head()
-    #to be completed with exmaple output
+    >>> # search listings within a price range
+    >>> listing_search(data, budget=[2000, 20000], model = "any", sort_feature = "odometer", ascending = True)
+    >>> # search listings for a spefici model and below a maximum price
+    >>> listing_search(data, budget=20000, model = "glk", sort_feature = "odometer", ascending = True)
     """
 
     # ======= Unit tests ==========
@@ -110,5 +110,11 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
 
     # sort by price & output
     result = temp_df.sort_values(by = 'price', ascending = ascending)
+
+    # order output 
+    priority_order = ['url', 'price', 'model', sort_feature]
+    remaining = list(set(data.columns) - set(priority_order))
+    all_col = priority_order + remaining
+    result = result.loc[:, all_col]
 
     return result
