@@ -96,4 +96,21 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     if type(ascending) != bool:
         raise Exception("Please specify True or False in the ascending parameter")
 
-   
+    # ======= Function ==========
+    
+    # filter by budget
+    if len(budget) == 1: # max budget specified
+        condition = data['price'] <= budget
+    else:
+        condition = budget[0] <= data['price'] <= budget[1]
+    temp_df = data[condition]
+
+    # filter by model
+    if model != "any":
+        condition = data['model'] == model
+        temp_df = temp_df[condition]
+
+    # sort by price & output
+    result = temp_df.sort_values(by = 'price', ascending = ascending)
+
+    return result
