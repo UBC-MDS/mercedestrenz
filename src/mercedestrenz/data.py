@@ -80,7 +80,7 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
             raise Exception("The model parameter should have a string as the input")
     
     # The string should correspond to a specific car model in the model column
-    if ((data['model'].eq(model)).any() or model == 'any') == False:
+    if ((model in data['model'].unique()) or model == 'any') == False:
         raise Exception("The specified car model does not exist in the dataframe provided")
 
     # sort_feature should be a string
