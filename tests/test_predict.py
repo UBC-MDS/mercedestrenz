@@ -3,8 +3,6 @@
 from mercedestrenz.predict import predict_mercedes_price
 from mercedestrenz.predict import load_mercedes_price_model
 from sklearn.pipeline import Pipeline
-import pandas as pd
-import joblib
 import pytest
 
 # test that passing valid values returns a float
