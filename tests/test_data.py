@@ -10,7 +10,7 @@ def test_listing_search():
     # Create a fictitious dataset for testing
     data = {'url':['www.a.ca', 'auto.com', 'benz.ca', 'cars.ca'],
         'condition':["good", 'average', 'average', 'new'],
-        'price' : [50000, 20000, 80000, 90000],
+        'price_USD' : [50000, 20000, 80000, 90000],
         'model' : ['s-class', 'glk', 'gls', 'gls'],
         'odometer': [12000, 30000, 35000, 150000],
         'year': [2016, 2015, 2020, 2010]
@@ -23,7 +23,7 @@ def test_listing_search():
     assert t1.shape == (1,6), "Wrong number of listings returned"
     assert t1['model'].tolist() == ['glk'], "The outout was not filtered by model= parameter "
 
-    assert set(t1.columns) == set(['url', 'price', 'model', 'odometer', 'condition', 'year']), "The dataframe does not contain the correct columns"
+    assert set(t1.columns) == set(['url', 'price_USD', 'model', 'odometer', 'condition', 'year']), "The dataframe does not contain the correct columns"
 
     t2 = listing_search(df, budget=[50000, 100000], model = "any", sort_feature = "year", ascending = False)
     assert t2.shape == (3,6), "Wrong number of listings returned"

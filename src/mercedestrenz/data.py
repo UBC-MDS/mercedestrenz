@@ -24,7 +24,7 @@ def load_sample_mercedes_listings()-> pd.DataFrame():
 
 # Author: Kelly Wu
 # Date: 2023-01-19
-def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odometer", ascending = True)-> pd.DataFrame():
+def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odometer_mi", ascending = True, price_col = 'price_USD')-> pd.DataFrame():
     """
     Return the top listings that are within the budget specified by the user.
 
@@ -45,6 +45,8 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
         The numeric variable that the user is interested in using to sort the result. The default value is to sort by odometer value.
     ascending : bool
         Boolean value that indicate whether the sort is ascending. The default value is True.
+    price_col : string
+        String value that indicates the column name of car price. The default is price_USD.
 
     Returns
     -------
@@ -54,9 +56,9 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     Examples
     --------
     >>> # search listings within a price range
-    >>> listing_search(data, budget=[2000, 20000], model = "any", sort_feature = "odometer", ascending = True)
-    >>> # search listings for a spefici model and below a maximum price
-    >>> listing_search(data, budget=20000, model = "glk", sort_feature = "odometer", ascending = True)
+    >>> listing_search(data, budget=[2000, 20000], model = "any", sort_feature = "odometer_mi", ascending = True)
+    >>> # search listings for a specific model and below a maximum price
+    >>> listing_search(data, budget=20000, model = "glk", sort_feature = "odometer_mi", ascending = True)
     """
 
     # ======= Unit tests ==========
@@ -93,14 +95,19 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     # ascending is either true or false
     if type(ascending) != bool:
         raise Exception("Please specify True or False in the ascending parameter")
+    
+    # price_col string
+    if type(price_col) != str:
+        raise Exception("Please specify the price column name using a string, or use the default value.")
+
 
     # ======= Function ==========
     
     # filter by budget
     if type(budget) in [float, int]: # max budget specified
-        condition = data['price'] <= budget
+        condition = data[price_col] <= budget
     else:
-        condition = ((budget[0] <= data['price']) & (data['price'] <= budget[1]))
+        condition = ((budget[0] <= data[price_col]) & (data[price_col] <= budget[1]))
     temp_df = data.loc[condition]
 
     # filter by model
@@ -109,10 +116,10 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
         temp_df = temp_df.loc[condition]
 
     # sort by price & output
-    result = temp_df.sort_values(by = [sort_feature, 'price'], ascending = [ascending, True])
+    result = temp_df.sort_values(by = [sort_feature, price_col], ascending = [ascending, True])
 
     # order output 
-    priority_order = ['url', 'price', 'model', sort_feature]
+    priority_order = ['url', price_col, 'model', sort_feature]
     remaining = list(set(data.columns) - set(priority_order))
     all_col = priority_order + remaining
     result = result.loc[:, all_col]
