@@ -102,4 +102,33 @@ def test_listing_search():
         # If no exception was raised, fail the test
         assert False, "Expected exception was not raised"
 
+# Author: Spencer Gerlach
+# Date: 2023-01-19
+from mercedestrenz.data import load_sample_mercedes_listings
 
+
+def test_load_sample_mercedes_listings():
+    """Tests for correct loading of sample data"""
+    
+    # Wrong columns
+    expected_num_columns = 16
+    actual_num_columns = len(load_sample_mercedes_listings().columns)
+    assert actual_num_columns == expected_num_columns, "Incorrect number of columns returned."
+
+    # Wrong rows
+    expected_num_rows = 8553
+    actual_num_rows = len(load_sample_mercedes_listings())
+    assert actual_num_rows == expected_num_rows, "Incorrect number of rows returned."
+
+    # No dataframe returned
+    assert load_sample_mercedes_listings() is not None, "Dataframe is not being returned by the function."
+
+    # Not pd.DataFrame type
+    assert type(load_sample_mercedes_listings()) is pd.DataFrame, "Function does not return a pandas dataframe."
+
+    # Wrong column names
+    expected_col_names = ['price_USD', 'condition', 'paint_color', 'model', 'odometer_mi', 'year',
+       'num_cylinders', 'fuel', 'transmission', 'drive', 'size', 'type',
+       'state', 'VIN', 'title_status', 'description']
+    actual_col_names = load_sample_mercedes_listings().columns
+    assert sum(expected_col_names == actual_col_names) == 16, "Column names not imported correctly (incorrect names or sequencing)."
