@@ -58,7 +58,7 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     >>> # search listings within a price range
     >>> listing_search(data, budget=[2000, 20000], model = "any", sort_feature = "odometer_mi", ascending = True)
     >>> # search listings for a specific model and below a maximum price
-    >>> listing_search(data, budget=20000, model = "glk", sort_feature = "odometer_mi", ascending = True)
+    >>> listing_search(data, budget=20000, model = "gl-class", sort_feature = "odometer_mi", ascending = True)
     """
 
     # ======= Unit tests ==========
