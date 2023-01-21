@@ -119,7 +119,7 @@ def listing_search(data, budget=[0, np.Inf], model = "any", sort_feature = "odom
     result = temp_df.sort_values(by = [sort_feature, price_col], ascending = [ascending, True])
 
     # order output 
-    priority_order = ['url', price_col, 'model', sort_feature]
+    priority_order = [price_col, 'model', sort_feature]
     remaining = list(set(data.columns) - set(priority_order))
     all_col = priority_order + remaining
     result = result.loc[:, all_col]
