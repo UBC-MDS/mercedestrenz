@@ -8,6 +8,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pandas = "^1.5.3"
+altair = "^4.2.0"
+numpy = "^1.24.1"
 
 [tool.poetry.dev-dependencies]
 [tool.semantic_release]
