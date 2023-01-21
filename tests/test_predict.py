@@ -5,6 +5,7 @@ from mercedestrenz.predict import load_mercedes_price_model
 from sklearn.pipeline import Pipeline
 import pytest
 
+
 # test that passing valid values returns a float
 def test_predict_mercedes_price():
     assert isinstance(
