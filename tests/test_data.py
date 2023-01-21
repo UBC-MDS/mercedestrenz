@@ -8,25 +8,25 @@ def test_listing_search():
     """Unit tests for listing_search function. """
     
     # Create a fictitious dataset for testing
-    data = {'url':['www.a.ca', 'auto.com', 'benz.ca', 'cars.ca'],
+    data = {
         'condition':["good", 'average', 'average', 'new'],
         'price_USD' : [50000, 20000, 80000, 90000],
         'model' : ['s-class', 'glk', 'gls', 'gls'],
-        'odometer': [12000, 30000, 35000, 150000],
+        'odometer_mi': [12000, 30000, 35000, 150000],
         'year': [2016, 2015, 2020, 2010]
         }
     df = pd.DataFrame(data)
 
     # Regular use cases
-    t1 = listing_search(df, budget=50000, model = "glk", sort_feature = "odometer", ascending = True)
+    t1 = listing_search(df, budget=50000, model = "glk", sort_feature = "odometer_mi", ascending = True)
     assert type(t1) == pd.DataFrame, "The function did not return a Pandas Dataframe"
-    assert t1.shape == (1,6), "Wrong number of listings returned"
+    assert t1.shape == (1,5), "Wrong number of listings returned"
     assert t1['model'].tolist() == ['glk'], "The outout was not filtered by model= parameter "
 
-    assert set(t1.columns) == set(['url', 'price_USD', 'model', 'odometer', 'condition', 'year']), "The dataframe does not contain the correct columns"
+    assert set(t1.columns) == set(['price_USD', 'model', 'odometer_mi', 'condition', 'year']), "The dataframe does not contain the correct columns"
 
     t2 = listing_search(df, budget=[50000, 100000], model = "any", sort_feature = "year", ascending = False)
-    assert t2.shape == (3,6), "Wrong number of listings returned"
+    assert t2.shape == (3,5), "Wrong number of listings returned"
     assert t2['model'].tolist() == ['gls', 's-class', 'gls'], "Wrong values returned by the function"
     assert t2['year'].tolist() == [2020, 2016, 2010], "Listings are not properly sorted by sort_feature and ascending parameter"
 
@@ -86,7 +86,7 @@ def test_listing_search():
 
     # Wrong input value for ascending parameter
     try:
-        listing_search(df, budget=[0, 80000], model = 'gls', sort_feature = 'odometer', ascending = "OK")
+        listing_search(df, budget=[0, 80000], model = 'gls', sort_feature = 'odometer_mi', ascending = "OK")
     except Exception as e:
         assert str(e) == "Please specify True or False in the ascending parameter", f"Unexpected exception raised: {e}"
     else:
