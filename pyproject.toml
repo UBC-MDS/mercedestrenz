@@ -11,8 +11,13 @@ python = "^3.9"
 pandas = "^1.5.3"
 altair = "^4.2.0"
 numpy = "^1.24.1"
+scikit-learn = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^4.0.0"
+
 [tool.semantic_release]
 version_variable = "pyproject.toml:version" # version location
 branch = "main"                             # branch to make releases of
