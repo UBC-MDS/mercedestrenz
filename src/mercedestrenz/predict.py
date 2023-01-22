@@ -14,7 +14,7 @@ def predict_mercedes_price(
     version="v1",
 ) -> int:
     """Predicts the price in USD of a Mercedes-Benz given the year, model,
-    condition, and number of cylinders.
+    condition, paint color and odometer reading.
 
     Uses a pre-trained model built into the package to predict the price of the
     mercedes. The model was trained on data from 1990 to 2022.
