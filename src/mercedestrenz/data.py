@@ -1,5 +1,5 @@
 # Author: Spencer Gerlach
-# Date: 2023-01-12
+# Date: 2023-01-20
 from importlib import resources
 import pandas as pd
 import numpy as np
@@ -16,10 +16,12 @@ def load_sample_mercedes_listings()-> pd.DataFrame():
     
     Examples
     --------
-    >>> from mercedestrenz.datasets import get_listings
-    >>> sample_mercedes_listings = get_listings()
+    >>> from mercedestrenz.data import load_sample_mercedes_listings
+    >>> sample_mercedes_listings = load_sample_mercedes_listings()
     """
-    pass
+    with resources.path('mercedestrenz.datasets', 'mercedes.csv') as d:
+        data = pd.read_csv(d, index_col=0)
+        return data
 
 
 # Author: Kelly Wu

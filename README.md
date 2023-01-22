@@ -16,7 +16,7 @@ The package contains the following functions:
 1. `load_sample_mercedes_listings`: Retrieves a data frame that contains sample data of used Mercedez Benz vehicles.
 2. `plot_mercedes_price`: Plot a density plot of a Mercedes-Benz model to see where the current vehicle's price falls for that same model in the market.
 3. `listing_search`: Retrieves the top listings that are within the budget range specified by the user.
-4. `predict_mercedes_price`: Predicts the price in USD of a Mercedes-Benz given the year, model, condition, and number of cylinders.
+4. `predict_mercedes_price`: Predicts the price in USD of a Mercedes-Benz given the year, model, odometer reading, condition and paint color.
 
 ## Package dataset
 
