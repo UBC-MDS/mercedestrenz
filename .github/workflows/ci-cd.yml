@@ -66,7 +66,7 @@ jobs:
         uses: benjefferies/branch-protection-bot@master
         if: always()
         with:
-            access-token: ${{ secrets.ADMIN_ACCESS_TOKEN }}
+            access_token: ${{ secrets.ADMIN_ACCESS_TOKEN }}
 
       - name: Use Python Semantic Release to prepare release
         env:
@@ -81,7 +81,7 @@ jobs:
         uses: benjefferies/branch-protection-bot@master
         if: always()  # Force to always run this step to ensure "include administrators" is always turned back on
         with:
-          access-token: ${{ secrets.ADMIN_ACCESS_TOKEN }}
+          access_token: ${{ secrets.ADMIN_ACCESS_TOKEN }}
           owner: tieandrews
           repo: mercedestrenz
 
