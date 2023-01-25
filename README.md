@@ -8,7 +8,7 @@ Kelly Wu, Morris Zhao, Spencer Gerlach, Ty Andrews
 
 ## Python ecosystem
 
-Our package is unique, it provides an easy way to investigate used Mercedes Benz car prices. It provide people a big picture about the market. The package relies on a real market data set to plot, filter and predict. It also gives advice to buyers and sellers wehn they try to make a decision.
+Our package is unique, it provides an easy way to investigate used Mercedes Benz car prices. It provide people a big picture about the market. The package relies on a real market data set to plot, filter and predict. It also gives advice to buyers and sellers when they try to make a decision.
 
 ## Functions
 
