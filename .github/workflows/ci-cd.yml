@@ -69,21 +69,14 @@ jobs:
         with:
             access_token: ${{ secrets.ADMIN_ACCESS_TOKEN }}
             branch: ${{ github.event.repository.default_branch }}
-      # Daniel's scripted version bump from: https://github.com/UBC-MDS/pypkgs_ubc/blob/main/.github/workflows/deploy.yml
-      # - name: Bump package versions
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     poetry run semantic-release version
-      #     poetry version $(grep "version" */mercedestrenz/__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
-      #     git commit -m "Bump versions" -a
-      - name: Use Python Semantic Release to prepare release
-        env:
-          GH_TOKEN: ${{ secrets.ADMIN_ACCESS_TOKEN }}
-        run: |
 #            git config user.name github-actions
 #            git config user.email github-actions@github.com
 #           include users name and email for the admin access token
+      - name: Use Python Semantic Release to prepare release
+        env:
+          GH_TOKEN: ${{ secrets.ADMIN_ACCESS_TOKEN }}
+
+        run: |
             git config user.name tieandrews  
             git config user.email ty.elgin.andrews@gmail.com
             poetry run semantic-release publish
