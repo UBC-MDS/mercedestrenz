@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-01-27)
+
+
 ## v0.2.0 (2023-01-27)
 ### Feature
 * Added semantic-release version_varibale ([`2e9ec1e`](https://github.com/UBC-MDS/mercedestrenz/commit/2e9ec1e8ab2f5b29999fc7dd5dd18df1c75253b6))
