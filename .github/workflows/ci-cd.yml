@@ -81,8 +81,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ADMIN_ACCESS_TOKEN }}
         run: |
-            git config user.name github-actions
-            git config user.email github-actions@github.com
+#            git config user.name github-actions
+#            git config user.email github-actions@github.com
+#           include users name and email for the admin access token
+            git config user.name tieandrews  
+            git config user.email ty.elgin.andrews@gmail.com
             poetry run semantic-release publish
       - name: Push package version changes
         uses: ad-m/github-push-action@master
@@ -93,8 +96,6 @@ jobs:
         if: always()  # Force to always run this step to ensure "include administrators" is always turned back on
         with:
           access_token: ${{ secrets.ADMIN_ACCESS_TOKEN }}
-          owner: UBC-MDS
-          repo: mercedestrenz
           branch: ${{ github.event.repository.default_branch }}
       - name: Get release tag version from package version
         run: |
