@@ -73,7 +73,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           poetry run semantic-release version
-          poetry version $(grep "version" */__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
+          poetry version $(grep "version" */mercedestrenz/__init__.py | cut -d "'" -f 2 | cut -d '"' -f 2)
           git commit -m "Bump versions" -a
       - name: Push package version changes
         uses: ad-m/github-push-action@master
