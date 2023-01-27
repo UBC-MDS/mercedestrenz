@@ -79,7 +79,7 @@ jobs:
       #     git commit -m "Bump versions" -a
       - name: Use Python Semantic Release to prepare release
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.ADMIN_ACCESS_TOKEN }}
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
@@ -87,7 +87,7 @@ jobs:
       - name: Push package version changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ADMIN_ACCESS_TOKEN }}
       - name: Enable "include administrators" branch protection
         uses: benjefferies/branch-protection-bot@master
         if: always()  # Force to always run this step to ensure "include administrators" is always turned back on
