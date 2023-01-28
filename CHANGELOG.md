@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2023-01-28)
+### Documentation
+* Usage updated ([`e656e5e`](https://github.com/UBC-MDS/mercedestrenz/commit/e656e5e29b644aaf1f351b147e42acc2f2c1c740))
+
 ## v0.2.1 (2023-01-27)
 
 

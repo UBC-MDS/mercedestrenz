@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mercedestrenz"
-version = "0.2.1"
+version = "0.2.2"
 description = "A package to inspect and analyze used Mercedes Benz car prices."
 authors = ["Ty Andrews"]
 license = "MIT"
