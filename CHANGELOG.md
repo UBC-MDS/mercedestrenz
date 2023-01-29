@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.4 (2023-01-29)
+
+
 ## v0.2.3 (2023-01-29)
 ### Documentation
 * Readme updated ([`c625fb1`](https://github.com/UBC-MDS/mercedestrenz/commit/c625fb1543a28ef090e0d0465c7102476ec24da6))
