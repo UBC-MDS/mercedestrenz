@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2023-01-29)
+### Feature
+* **new:** Updated project. BREAKING CHANGE! ([`09b3115`](https://github.com/UBC-MDS/mercedestrenz/commit/09b3115bc120d37193bf745d61ad0b9fd3d93f40))
+
 ## v0.2.5 (2023-01-29)
 
 
