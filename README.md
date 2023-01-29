@@ -1,8 +1,11 @@
 # mercedestrenz
+[![ci-cd](https://github.com/UBC-MDS/mercedestrenz/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-MDS/mercedestrenz/actions/workflows/ci-cd.yml)
+[![Documentation Status](https://readthedocs.org/projects/mercedestrenz/badge/?version=latest)](https://mercedestrenz.readthedocs.io/en/latest/?badge=latest)
+[![codecov](https://codecov.io/gh/UBC-MDS/mercedestrenz/branch/main/graph/badge.svg?token=gGCFt30coe)](https://codecov.io/gh/UBC-MDS/mercedestrenz)
 
 This python package is for inspecting and analyzing used Mercedes Benz car prices. The package helps users to get simple answers on how to choose the used Mercedes Benz car in the market. The package also includes useful visualization tool and trained model to serve buyers and sellers.
 
-The full documentation of mercedestrenz package can be viewed [here](https://mercedestrenz.readthedocs.io/).
+The full documentation of mercedestrenz package can be viewed [here](https://mercedestrenz.readthedocs.io/en/latest/index.html).
 
 ## Collaborators
 
