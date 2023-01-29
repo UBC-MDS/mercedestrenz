@@ -23,7 +23,7 @@ The package contains the following functions:
 3. `listing_search`: Retrieves the top listings that are within the budget range specified by the user.
 4. `predict_mercedes_price`: Predicts the price in USD of a Mercedes-Benz given the year, model, odometer reading, condition and paint color.
 
-## Package dataset 
+## Package dataset
 
 The package contains a static dataset for Craiglist used-car listings that were previously web scraped. Several key attributes about the used-car are available in the dataset, such as vehicle prices, models, car conditions, odometer readings, VINs, regions and transmission. The package's dataset was adapted from verison 10 of the raw dataset created by [AustinReese](https://github.com/AustinReese/UsedVehicleSearch).
 
