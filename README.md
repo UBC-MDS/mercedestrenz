@@ -17,7 +17,7 @@ Our package is unique, it provides an easy way to investigate used Mercedes Benz
 
 ## Functions
 
-The package contains the following functions:
+The package contains the following functions: 
 1. `load_sample_mercedes_listings`: Retrieves a data frame that contains sample data of used Mercedez Benz vehicles.
 2. `plot_mercedes_price`: Plot a density plot of a Mercedes-Benz model to see where the current vehicle's price falls for that same model in the market.
 3. `listing_search`: Retrieves the top listings that are within the budget range specified by the user.
