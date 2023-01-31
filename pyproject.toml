@@ -11,7 +11,7 @@ python = "^3.9"
 pandas = "^1.5.3"
 altair = "^4.2.0"
 numpy = "^1.24.1"
-scikit-learn = "^1.2.0"
+scikit-learn = "1.2.1"
 
 [tool.poetry.dev-dependencies]
 
