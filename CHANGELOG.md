@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.0 (2023-02-01)
+### Feature
+* New changes ([`32c79a8`](https://github.com/UBC-MDS/mercedestrenz/commit/32c79a837d015c0c8d9822a5d45da7185647e59f))
+
+### Breaking
+* new changes ([`32c79a8`](https://github.com/UBC-MDS/mercedestrenz/commit/32c79a837d015c0c8d9822a5d45da7185647e59f))
+
 ## v0.3.1 (2023-02-01)
 
 
